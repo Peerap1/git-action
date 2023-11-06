@@ -15,6 +15,9 @@ Open web app
     Set Selenium Speed          0.5
 
 *** test cases ***
+Test Log
+    Log     Ole Pee
+
 TEST OPEN APP
     Open web app
     SeleniumLibrary.Wait Until Page Contains Element 	 //*[@name="btnK"]
