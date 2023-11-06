@@ -1,0 +1,33 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+# mac
+.DS_Store
+
+# Eclipse config files
+.project
+.settings
+.classpath
+
+# venv
+venv
+
+# robot
+results
+output
+log.html
+output.xml
+report.html
+
+# pycache
+*.py[cod]
+*.pyc
+pcloudy.cpython-38.pyc
+
+**/node_modules/
+
+qa_script/.env
