@@ -22,7 +22,6 @@ jobs:
           run: |
             pip install --upgrade pip
             pip install -r requirements.txt
-            apk add --no-cache chromium chromium-chromedriver font-noto-thai curl bash openssl
         - name: Run Test
           run: python -m robot --outputdir results testcases/
         - name: Run Test and create report
