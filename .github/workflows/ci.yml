@@ -22,6 +22,8 @@ jobs:
           run: |
             pip install --upgrade pip
             pip install -r requirements.txt
+        - uses: browser-actions/setup-chrome@v1
+        - run: chrome --version
         - name: Run Test
           run: python -m robot --outputdir results testcases/
         - name: Run Test and create report
