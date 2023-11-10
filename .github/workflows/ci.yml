@@ -18,16 +18,15 @@ jobs:
           with:
             path: ~/.cache/pip
             key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+
         - name: Install pip dependencies
           run: |
             pip install --upgrade pip
             pip install -r requirements.txt
+        
         - uses: browser-actions/setup-chrome@v1
         - run: chrome --version
-
-      
-        - uses: actions/checkout@v2
-        - uses: nanasess/setup-chromedriver@v2
+        - uses: driver-actions/setup-chromedriver@v2
         - run: |
             export DISPLAY=:99
             chromedriver --url-base=/wd/hub &
@@ -36,8 +35,10 @@ jobs:
     
         - name: Run Test
           run: python -m robot --outputdir results testcases/
+          
         - name: Run Test and create report
           run: python -m robot -d reports -x junit-report.xml "testcases/"
+          
         - name: Run Robot Framework tests and generate report
           run: |
              echo "ROBOT_RC=$?" >> "$GITHUB_ENV"  
@@ -46,6 +47,7 @@ jobs:
         #   run: |
         #     echo "Auto Test Pass Rate Not 100%, Please Check Test Result"
         #     exit 1
+        
         - name: Publish test results
           uses: actions/upload-artifact@v2
           with:
