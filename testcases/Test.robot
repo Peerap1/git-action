@@ -24,7 +24,7 @@ Open web app
     ...    AND    Call Method    ${options}    add_argument    --disable-gpu
     ...    AND    Call Method    ${options}    add_argument    --no-sandbox
     ...    AND    Call Method    ${options}    add_argument    --disable-popup-blocking
-    # ...    AND    Call Method    ${options}    add_argument    --headless
+    ...    AND    Call Method    ${options}    add_argument    --headless
     SeleniumLibrary.Create WebDriver    Chrome    chrome_options=${options}
     SeleniumLibrary.Go To    ${url}
 
