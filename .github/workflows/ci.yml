@@ -3,9 +3,9 @@ name: Robot Framework CI
 on:
   push:
     branches:
-      - master
-  pull_request:
-  workflow_dispatch:
+      - develop
+  # pull_request:
+  # workflow_dispatch:
 
 jobs:
     Run-Test:
@@ -22,6 +22,8 @@ jobs:
           run: |
             pip install --upgrade pip
             pip install -r requirements.txt
+            pip install chromedriver-py
+            pip install chromedriver-binary-auto
         - name: Run Test
           run: python -m robot --outputdir results testcases/
         - name: Run Test and create report
