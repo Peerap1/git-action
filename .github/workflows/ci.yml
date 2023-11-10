@@ -37,8 +37,8 @@ jobs:
         - name: Run Test
           run: python -m robot --outputdir results testcases/
           
-        - name: Run Test and create report
-          run: python -m robot -d reports -x junit-report.xml "testcases/"
+        # - name: Run Test and create report
+        #   run: python -m robot -d reports -x junit-report.xml "testcases/"
           
         # - name: Run Robot Framework tests and generate report
         #   run: |
