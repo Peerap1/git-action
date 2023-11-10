@@ -24,15 +24,15 @@ jobs:
             pip install --upgrade pip
             pip install -r requirements.txt
         
-        - uses: browser-actions/setup-chrome@v1
-        - run: chrome --version
+        # - uses: browser-actions/setup-chrome@v1
+        # - run: chrome --version
 
-        - uses: actions/checkout@v2
-        - uses: nanasess/setup-chromedriver@v2
-        - run: |
-            export DISPLAY=:99
-            chromedriver --url-base=/wd/hub &
-            sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+        # - uses: actions/checkout@v2
+        # - uses: nanasess/setup-chromedriver@v2
+        # - run: |
+        #     export DISPLAY=:99
+        #     chromedriver --url-base=/wd/hub &
+        #     sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
 
         - name: Run Test
           run: python -m robot --outputdir results testcases/
